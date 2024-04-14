@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Courses{% endblock %}
+{% block content %}
+
+
+  {% for crs in course %}
+  <div class="container-fluid mt-5">
+    <div class="card mb-3" style="max-width: 1500px;">
+    <div class="row g-0">
+        <div class="col-lg-4">
+            <img src="{{ crs.image }}" class=" mt-2 text-center img-fluid rounded-start" alt="Image">
+             </div>
+        <div class="col-lg-8">
+        <div class="card-body">
+            <h5 class="card-title"><td>{{ crs.title }}</td></h5>
+            <p class="card-text">{{ crs.author }}</p>
+            <p class="card-text col-lg-10 fs-5">{{ crs.overview }}</p>
+            <p class="card-text"><small class="text-muted fs-6">{{ crs.title }}</small></p>
+            <a class="card-text btn btn-lg btn-primary" href="{{ crs.url }}" target="_blank" role="button">Visit Website</a>
+        </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}
